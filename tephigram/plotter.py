@@ -234,7 +234,7 @@ class Tephigram:
         plot line at pressure `P` (in hPa)
         """
         x0 = None
-        T__ = np.linspace(T_min, T_max+10., 1000.)
+        T__ = np.linspace(T_min, T_max+10., 1000)
         theta_constP = -273.15 + self.f_theta(P, T__+273.15)
 
         x, y = self._tf(T__, theta_constP)
