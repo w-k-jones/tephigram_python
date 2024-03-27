@@ -6,6 +6,12 @@ import numpy as np
 import scipy.interpolate
 from collections import namedtuple
 
+# Monkey patch collections to fix attrdict
+import collections
+import collections.abc
+for type_name in collections.abc.__all__:
+    setattr(collections, type_name, getattr(collections.abc, type_name))
+
 from attrdict import AttrDict
 
 from . import parameterisations
